@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Form</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ensure you have this CSS file for styling -->
+</head>
+<body>
+
+<form id="shippingForm">
+    <h2>Capitol Mailroom Shipping Form</h2>
+    
+    <section>
+        <h3>From</h3>
+        <label for="postageAccount">Postage Account to be charged:</label>
+        <input type="text" id="postageAccount" name="postageAccount">
+        <small>Email authorization is required to use other office’s / department’s Postage Account.</small>
+    </section>
+    
+    <section>
+        <h3>To</h3>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="company">LIO / Company:</label>
+        <input type="text" id="company" name="company">
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address">
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state">
+
+        <label for="zip">Zip:</label>
+        <input type="text" id="zip" name="zip">
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone">
+        <small>Phone number required for FedEx and AK Air Cargo.</small>
+    </section>
+    
+    <section>
+        <h3>Package Info</h3>
+        <label for="arriveBy">Package needs to arrive by:</label>
+        <input type="date" id="arriveBy" name="arriveBy">
+
+        <fieldset>
+            <legend>Preferred carrier:</legend>
+            <label><input type="radio" name="carrier" value="USPS" checked> USPS (default)</label>
+            <label><input type="radio" name="carrier" value="FedEx"> FedEx</label>
+            <label><input type="radio" name="carrier" value="AKAirCargo"> AK Air Cargo</label>
+        </fieldset>
+
+        <label>Do any of the packages contain batteries?</label>
+        <label><input type="radio" name="batteries" value="no" checked> No</label>
+        <label><input type="radio" name="batteries" value="yes"> Yes (Contact Mailroom for Battery Form.)</label>
+    </section>
+    
+<section>
+    <h3>Authorization</h3>
+    <label for="signatureCanvas">Signature:</label>
+    <canvas id="signatureCanvas" style="border: 1px solid #ccc;"></canvas>
+    <button type="button" id="clearSignature">Clear Signature</button>
+    <input type="hidden" id="signature" name="signature">
+    <!-- Other fields like date and printed name -->
+</section>
+
+    <button type="submit">Submit</button>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+<script src="shipform.js"></script> <!-- external js file -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script> 
+
+</body>
+</html>
