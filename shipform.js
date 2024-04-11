@@ -1,3 +1,4 @@
+window.onload = function() {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize Signature Pad
     var canvas = document.getElementById('signatureCanvas');
@@ -53,3 +54,4 @@ document.addEventListener('DOMContentLoaded', function() {
         // need AJAX for serverside processing
     });
 });
+};
